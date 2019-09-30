@@ -14,7 +14,6 @@ export class MainDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.endpointsService.getPosts().subscribe(res => {
-      console.log(res);
       this.posts = res;
     })
   }

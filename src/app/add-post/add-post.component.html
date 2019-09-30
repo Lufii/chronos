@@ -1,0 +1,18 @@
+<div class='outer-modal' (click)='hideAddPost()'>
+
+</div>
+<div class='inner-modal'>
+
+Tell your future self a story
+                <input [(ngModel)]='post.title' class='post-title' type='text' placeholder='What is it about?'>
+                <textarea [(ngModel)]='post.content' class='post-content'></textarea>
+            <div class='post-categories'>
+                some categories go here
+            </div>
+            <div class='toolbox'>
+            </div>>
+            <button (click)='addPost()'>we go</button>
+
+        
+        
+</div>

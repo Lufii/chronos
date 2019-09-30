@@ -1,13 +1,14 @@
 <div class="content" role="main">
 
-  
-  <div class="card highlight-card card-small">
+  <div class='title' (click)='addPostModal()'>{{ title }}</div>
+  <div class='journey-animation'>my journey through time</div> 
 
-    <div class='title' (click)='addPost()'>{{ title }}</div>
-    <div class='journey-animation'>my journey through time</div> 
+  <div *ngIf='!isAddPostVisible()' class="card highlight-card card-small">
     <app-nav-menu></app-nav-menu>
     <app-main-display></app-main-display>
   </div>
+
+  <add-post *ngIf='isAddPostVisible()' (closeModal)="onCloseModal()"></add-post>
 </div>
   
 <router-outlet></router-outlet>

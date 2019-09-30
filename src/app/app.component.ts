@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chronos';
+  addPostVisible = false;
+
+  onCloseModal() {
+    this.addPostVisible=false; 
+  }
+
+  public isAddPostVisible = () => {
+    return this.addPostVisible;
+  }
+
+  public addPostModal = () => {
+    this.addPostVisible = true;
+  }
 }

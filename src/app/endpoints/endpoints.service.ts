@@ -15,7 +15,7 @@ export class EndpointsService {
 
   public addPost(content): Observable<any>
   {
-    const url = 'http://localhost:72/post/add';
+    const url = 'http://localhost:72/post/create';
     return this.http.post<any>(url, content);
   }
 

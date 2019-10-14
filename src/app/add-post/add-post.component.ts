@@ -14,9 +14,13 @@ export class AddPostComponent implements OnInit {
   ngOnInit() {
   }
 
+  categories = ['Entropy', 'Spirit', 'Music', 'Books', 'Core', 'Summaries', 'Moods', 'Plans'];
+  selectedCategories = [false, false, false, false, false, false, false, false];
+
   post={
     title: '',
-    content: ''
+    content: '',
+    categories: []
   };
 
   hideAddPost() {
@@ -24,12 +28,21 @@ export class AddPostComponent implements OnInit {
   }
 
   addPost() {
-    console.log('a', this.post)
+    let j=0;
+    console.log('q', this.selectedCategories);
+    for (let i=0; i<this.selectedCategories.length; i++)
+      if(!this.selectedCategories[i]){
+        this.categories.splice(i-j,1);
+        j++;
+      }
+    console.log('w', this.categories);
+    this.post.categories = this.categories;
     this.endpoints.addPost(this.post).subscribe(res => {
       console.log('b')
       console.log(this.post);
       console.log(res);
     });
+    window.location.href = "http://localhost:4200/";
   }
 
 }

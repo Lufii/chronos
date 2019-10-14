@@ -3,16 +3,14 @@
 </div>
 <div class='inner-modal'>
 
-Tell your future self a story
-                <input [(ngModel)]='post.title' class='post-title' type='text' placeholder='What is it about?'>
-                <textarea [(ngModel)]='post.content' class='post-content'></textarea>
-            <div class='post-categories'>
-                some categories go here
-            </div>
-            <div class='toolbox'>
-            </div>>
-            <button (click)='addPost()'>we go</button>
+    Tell your future self a story
+    <input [(ngModel)]='post.title' class='post-title' type='text'
+        placeholder='Elves, wizards, trolls? What will it be...' />
+    <textarea [(ngModel)]='post.content' class='post-content'></textarea><br />
+    <button (click)='addPost()'>Super wow, many submit</button>
 
-        
-        
+    <div *ngFor="let category of categories; let i = index">
+        <input [(ngModel)]="selectedCategories[i]" type='checkbox' />{{category}}
+    </div>
+
 </div>

@@ -8,13 +8,15 @@ import { MainDisplayComponent } from './main-display/main-display.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddPostComponent } from './add-post/add-post.component';
 import { FormsModule } from '@angular/forms';
+import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     MainDisplayComponent,
-    AddPostComponent
+    AddPostComponent,
+    EscapeHtmlPipe
   ],
   imports: [
     BrowserModule,

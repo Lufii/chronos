@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nav-menu',
@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-menu.component.scss']
 })
 export class NavMenuComponent implements OnInit {
-
+  @Output() category = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
-   
+    this.category.emit(this.displayCategory);
   }
 
   categories = ['Entropy', 'Spirit', 'Music', 'Books', 'Core', 'Summaries', 'Moods', 'Plans'];
@@ -32,6 +32,7 @@ export class NavMenuComponent implements OnInit {
 
   private renderCategory = () => {
     this.displayCategory = this.categories[this.currentIndex%this.categories.length];
+    this.category.emit(this.displayCategory);
   }
 
 }

@@ -1,11 +1,11 @@
 <div class="content" role="main">
 
   <div class='title' (click)='addPostModal()'>{{ title }}</div>
-  <div class='journey-animation'>my journey through time</div> 
+  <div class='journey-animation' onclick='window.location.href = "http://localhost:4200/"'>my journey through time</div> 
 
   <div *ngIf='!isAddPostVisible()' class="card highlight-card card-small">
-    <app-nav-menu></app-nav-menu>
-    <app-main-display></app-main-display>
+    <app-nav-menu (category)="onCategoryChange($event)"></app-nav-menu>
+    <app-main-display [category]="sendCategory"></app-main-display>
   </div>
 
   <add-post *ngIf='isAddPostVisible()' (closeModal)="onCloseModal()"></add-post>

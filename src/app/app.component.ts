@@ -8,9 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'chronos';
   addPostVisible = false;
+  sendCategory = '';
 
   onCloseModal() {
     this.addPostVisible=false; 
+  }
+
+  onCategoryChange(category: string){
+    this.sendCategory = category;
   }
 
   public isAddPostVisible = () => {

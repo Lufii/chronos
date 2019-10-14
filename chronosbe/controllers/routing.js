@@ -41,8 +41,9 @@ module.exports = {
 
 
   deletePost: (req,res) => {
+    var mongodb = require('mongodb');
     db.collection('posts').deleteOne({
-    'id':parseInt(req.body.id)
+    _id: new mongodb.ObjectID(req.body._id)
     }, (err, result) => {
       if (err) return console.log(err);
       console.log('Deleted post from DB', result);

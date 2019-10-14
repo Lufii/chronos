@@ -1,31 +1,7 @@
 
 body{
     background-color: black;
-    color: white;
+    color: #d4d4d4;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
 }
-.title{
-    display: inline-block;
-    font-size: 20px;
-    cursor: pointer;
-}
-.journey-animation {
-    height: 24px;
-    vertical-align: middle;
-    display: inline-block;
-    animation: animate 180s linear infinite;
-    margin-left: 15px;
-  }
-  
-  @keyframes animate {
-    0% {
-        opacity: 0;
-    }
-    3%{
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
-  }

@@ -18,11 +18,14 @@ p{
 }
 
 .nav-menu{
-    background-color: gray;
-    width: 500px;
+    width: 120px;
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
     margin-top: 5px;
     max-width: 100%;
+}
+
+.current-category{
+    user-select: none;
 }
